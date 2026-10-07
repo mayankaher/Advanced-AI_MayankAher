@@ -1,0 +1,1091 @@
+{
+ "version": 1,
+ "seed": 42,
+ "note": "Ground-truth/expert-reference model. Synthetic, for education only - NOT clinically validated.",
+ "nodes": {
+  "Age": {
+   "states": [
+    "Child",
+    "Adult",
+    "Elderly"
+   ],
+   "parents": [],
+   "cpt": {
+    "": [
+     0.15,
+     0.55,
+     0.3
+    ]
+   }
+  },
+  "History": {
+   "states": [
+    "None",
+    "Cardiac",
+    "Respiratory",
+    "Metabolic"
+   ],
+   "parents": [
+    "Age"
+   ],
+   "cpt": {
+    "Child": [
+     0.8,
+     0.02,
+     0.15,
+     0.03
+    ],
+    "Adult": [
+     0.55,
+     0.12,
+     0.13,
+     0.2
+    ],
+    "Elderly": [
+     0.25,
+     0.35,
+     0.15,
+     0.25
+    ]
+   }
+  },
+  "Condition": {
+   "states": [
+    "Cardiac",
+    "Respiratory",
+    "Infection",
+    "Trauma",
+    "Minor"
+   ],
+   "parents": [
+    "Age",
+    "History"
+   ],
+   "cpt": {
+    "Child|None": [
+     0.01108,
+     0.166205,
+     0.180055,
+     0.199446,
+     0.443213
+    ],
+    "Child|Cardiac": [
+     0.049231,
+     0.184615,
+     0.2,
+     0.221538,
+     0.344615
+    ],
+    "Child|Respiratory": [
+     0.007612,
+     0.456708,
+     0.185538,
+     0.137012,
+     0.21313
+    ],
+    "Child|Metabolic": [
+     0.018127,
+     0.151057,
+     0.327291,
+     0.181269,
+     0.322256
+    ],
+    "Adult|None": [
+     0.117878,
+     0.147348,
+     0.147348,
+     0.194499,
+     0.392927
+    ],
+    "Adult|Cardiac": [
+     0.381558,
+     0.119237,
+     0.119237,
+     0.157393,
+     0.222576
+    ],
+    "Adult|Respiratory": [
+     0.084329,
+     0.421644,
+     0.158117,
+     0.139143,
+     0.196767
+    ],
+    "Adult|Metabolic": [
+     0.182432,
+     0.126689,
+     0.253378,
+     0.16723,
+     0.27027
+    ],
+    "Elderly|None": [
+     0.257069,
+     0.192802,
+     0.205656,
+     0.138817,
+     0.205656
+    ],
+    "Elderly|Cardiac": [
+     0.601504,
+     0.112782,
+     0.120301,
+     0.081203,
+     0.084211
+    ],
+    "Elderly|Respiratory": [
+     0.15873,
+     0.47619,
+     0.190476,
+     0.085714,
+     0.088889
+    ],
+    "Elderly|Metabolic": [
+     0.337711,
+     0.140713,
+     0.300188,
+     0.101313,
+     0.120075
+    ]
+   }
+  },
+  "Severity": {
+   "states": [
+    "Low",
+    "Moderate",
+    "Critical"
+   ],
+   "parents": [
+    "Age",
+    "Condition"
+   ],
+   "cpt": {
+    "Child|Cardiac": [
+     0.336735,
+     0.459184,
+     0.204082
+    ],
+    "Child|Respiratory": [
+     0.435644,
+     0.445545,
+     0.118812
+    ],
+    "Child|Infection": [
+     0.435644,
+     0.445545,
+     0.118812
+    ],
+    "Child|Trauma": [
+     0.48577,
+     0.412169,
+     0.102061
+    ],
+    "Child|Minor": [
+     0.954512,
+     0.044757,
+     0.000731
+    ],
+    "Adult|Cardiac": [
+     0.3,
+     0.45,
+     0.25
+    ],
+    "Adult|Respiratory": [
+     0.4,
+     0.45,
+     0.15
+    ],
+    "Adult|Infection": [
+     0.4,
+     0.45,
+     0.15
+    ],
+    "Adult|Trauma": [
+     0.45,
+     0.42,
+     0.13
+    ],
+    "Adult|Minor": [
+     0.95,
+     0.049,
+     0.001
+    ],
+    "Elderly|Cardiac": [
+     0.198113,
+     0.424528,
+     0.377358
+    ],
+    "Elderly|Respiratory": [
+     0.28866,
+     0.463918,
+     0.247423
+    ],
+    "Elderly|Infection": [
+     0.28866,
+     0.463918,
+     0.247423
+    ],
+    "Elderly|Trauma": [
+     0.33404,
+     0.445387,
+     0.220573
+    ],
+    "Elderly|Minor": [
+     0.92929,
+     0.068474,
+     0.002236
+    ]
+   }
+  },
+  "ChestPain": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "cpt": {
+    "Cardiac": [
+     0.15,
+     0.85
+    ],
+    "Respiratory": [
+     0.85,
+     0.15
+    ],
+    "Infection": [
+     0.95,
+     0.05
+    ],
+    "Trauma": [
+     0.8,
+     0.2
+    ],
+    "Minor": [
+     0.95,
+     0.05
+    ]
+   }
+  },
+  "Dyspnea": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "cpt": {
+    "Cardiac": [
+     0.45,
+     0.55
+    ],
+    "Respiratory": [
+     0.1,
+     0.9
+    ],
+    "Infection": [
+     0.7,
+     0.3
+    ],
+    "Trauma": [
+     0.85,
+     0.15
+    ],
+    "Minor": [
+     0.95,
+     0.05
+    ]
+   }
+  },
+  "VisibleInjury": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "cpt": {
+    "Cardiac": [
+     0.99,
+     0.01
+    ],
+    "Respiratory": [
+     0.99,
+     0.01
+    ],
+    "Infection": [
+     0.98,
+     0.02
+    ],
+    "Trauma": [
+     0.1,
+     0.9
+    ],
+    "Minor": [
+     0.94,
+     0.06
+    ]
+   }
+  },
+  "HeartRate": {
+   "states": [
+    "Normal",
+    "Abnormal",
+    "Severe"
+   ],
+   "parents": [
+    "Condition",
+    "Severity"
+   ],
+   "cpt": {
+    "Cardiac|Low": [
+     0.813397,
+     0.174163,
+     0.01244
+    ],
+    "Cardiac|Moderate": [
+     0.386266,
+     0.502146,
+     0.111588
+    ],
+    "Cardiac|Critical": [
+     0.119522,
+     0.414343,
+     0.466135
+    ],
+    "Respiratory|Low": [
+     0.825243,
+     0.163107,
+     0.01165
+    ],
+    "Respiratory|Moderate": [
+     0.405405,
+     0.486486,
+     0.108108
+    ],
+    "Respiratory|Critical": [
+     0.128205,
+     0.410256,
+     0.461538
+    ],
+    "Infection|Low": [
+     0.801887,
+     0.184906,
+     0.013208
+    ],
+    "Infection|Moderate": [
+     0.368852,
+     0.516393,
+     0.114754
+    ],
+    "Infection|Critical": [
+     0.11194,
+     0.41791,
+     0.470149
+    ],
+    "Trauma|Low": [
+     0.790698,
+     0.195349,
+     0.013953
+    ],
+    "Trauma|Moderate": [
+     0.352941,
+     0.529412,
+     0.117647
+    ],
+    "Trauma|Critical": [
+     0.105263,
+     0.421053,
+     0.473684
+    ],
+    "Minor|Low": [
+     0.85,
+     0.14,
+     0.01
+    ],
+    "Minor|Moderate": [
+     0.45,
+     0.45,
+     0.1
+    ],
+    "Minor|Critical": [
+     0.15,
+     0.4,
+     0.45
+    ]
+   }
+  },
+  "SystolicBP": {
+   "states": [
+    "Normal",
+    "Abnormal",
+    "Severe"
+   ],
+   "parents": [
+    "Condition",
+    "Severity"
+   ],
+   "cpt": {
+    "Cardiac|Low": [
+     0.830189,
+     0.15566,
+     0.014151
+    ],
+    "Cardiac|Moderate": [
+     0.44898,
+     0.465306,
+     0.085714
+    ],
+    "Cardiac|Critical": [
+     0.142857,
+     0.375,
+     0.482143
+    ],
+    "Respiratory|Low": [
+     0.890688,
+     0.100202,
+     0.009109
+    ],
+    "Respiratory|Moderate": [
+     0.575916,
+     0.358115,
+     0.065969
+    ],
+    "Respiratory|Critical": [
+     0.217391,
+     0.342391,
+     0.440217
+    ],
+    "Infection|Low": [
+     0.830189,
+     0.15566,
+     0.014151
+    ],
+    "Infection|Moderate": [
+     0.44898,
+     0.465306,
+     0.085714
+    ],
+    "Infection|Critical": [
+     0.142857,
+     0.375,
+     0.482143
+    ],
+    "Trauma|Low": [
+     0.785714,
+     0.196429,
+     0.017857
+    ],
+    "Trauma|Moderate": [
+     0.37931,
+     0.524138,
+     0.096552
+    ],
+    "Trauma|Critical": [
+     0.111111,
+     0.388889,
+     0.5
+    ],
+    "Minor|Low": [
+     0.88,
+     0.11,
+     0.01
+    ],
+    "Minor|Moderate": [
+     0.55,
+     0.38,
+     0.07
+    ],
+    "Minor|Critical": [
+     0.2,
+     0.35,
+     0.45
+    ]
+   }
+  },
+  "SpO2": {
+   "states": [
+    "Normal",
+    "Abnormal",
+    "Severe"
+   ],
+   "parents": [
+    "Condition",
+    "Severity"
+   ],
+   "cpt": {
+    "Cardiac|Low": [
+     0.905512,
+     0.082677,
+     0.011811
+    ],
+    "Cardiac|Moderate": [
+     0.504587,
+     0.385321,
+     0.110092
+    ],
+    "Cardiac|Critical": [
+     0.172414,
+     0.362069,
+     0.465517
+    ],
+    "Respiratory|Low": [
+     0.821429,
+     0.15625,
+     0.022321
+    ],
+    "Respiratory|Moderate": [
+     0.328358,
+     0.522388,
+     0.149254
+    ],
+    "Respiratory|Critical": [
+     0.090909,
+     0.397727,
+     0.511364
+    ],
+    "Infection|Low": [
+     0.912698,
+     0.076389,
+     0.010913
+    ],
+    "Infection|Moderate": [
+     0.526316,
+     0.368421,
+     0.105263
+    ],
+    "Infection|Critical": [
+     0.185185,
+     0.356481,
+     0.458333
+    ],
+    "Trauma|Low": [
+     0.92,
+     0.07,
+     0.01
+    ],
+    "Trauma|Moderate": [
+     0.55,
+     0.35,
+     0.1
+    ],
+    "Trauma|Critical": [
+     0.2,
+     0.35,
+     0.45
+    ],
+    "Minor|Low": [
+     0.92,
+     0.07,
+     0.01
+    ],
+    "Minor|Moderate": [
+     0.55,
+     0.35,
+     0.1
+    ],
+    "Minor|Critical": [
+     0.2,
+     0.35,
+     0.45
+    ]
+   }
+  },
+  "RespRate": {
+   "states": [
+    "Normal",
+    "Abnormal",
+    "Severe"
+   ],
+   "parents": [
+    "Condition",
+    "Severity"
+   ],
+   "cpt": {
+    "Cardiac|Low": [
+     0.88,
+     0.11,
+     0.01
+    ],
+    "Cardiac|Moderate": [
+     0.5,
+     0.4,
+     0.1
+    ],
+    "Cardiac|Critical": [
+     0.15,
+     0.4,
+     0.45
+    ],
+    "Respiratory|Low": [
+     0.745763,
+     0.233051,
+     0.021186
+    ],
+    "Respiratory|Moderate": [
+     0.285714,
+     0.571429,
+     0.142857
+    ],
+    "Respiratory|Critical": [
+     0.065934,
+     0.43956,
+     0.494505
+    ],
+    "Infection|Low": [
+     0.830189,
+     0.15566,
+     0.014151
+    ],
+    "Infection|Moderate": [
+     0.4,
+     0.48,
+     0.12
+    ],
+    "Infection|Critical": [
+     0.105263,
+     0.421053,
+     0.473684
+    ],
+    "Trauma|Low": [
+     0.859375,
+     0.128906,
+     0.011719
+    ],
+    "Trauma|Moderate": [
+     0.454545,
+     0.436364,
+     0.109091
+    ],
+    "Trauma|Critical": [
+     0.128205,
+     0.410256,
+     0.461538
+    ],
+    "Minor|Low": [
+     0.88,
+     0.11,
+     0.01
+    ],
+    "Minor|Moderate": [
+     0.5,
+     0.4,
+     0.1
+    ],
+    "Minor|Critical": [
+     0.15,
+     0.4,
+     0.45
+    ]
+   }
+  },
+  "Consciousness": {
+   "states": [
+    "Alert",
+    "Altered",
+    "Unresponsive"
+   ],
+   "parents": [
+    "Condition",
+    "Severity"
+   ],
+   "cpt": {
+    "Cardiac|Low": [
+     0.945274,
+     0.049254,
+     0.005473
+    ],
+    "Cardiac|Moderate": [
+     0.784314,
+     0.183333,
+     0.032353
+    ],
+    "Cardiac|Critical": [
+     0.377358,
+     0.363208,
+     0.259434
+    ],
+    "Respiratory|Low": [
+     0.945274,
+     0.049254,
+     0.005473
+    ],
+    "Respiratory|Moderate": [
+     0.784314,
+     0.183333,
+     0.032353
+    ],
+    "Respiratory|Critical": [
+     0.377358,
+     0.363208,
+     0.259434
+    ],
+    "Infection|Low": [
+     0.940594,
+     0.053465,
+     0.005941
+    ],
+    "Infection|Moderate": [
+     0.769231,
+     0.196154,
+     0.034615
+    ],
+    "Infection|Critical": [
+     0.357143,
+     0.375,
+     0.267857
+    ],
+    "Trauma|Low": [
+     0.926829,
+     0.065854,
+     0.007317
+    ],
+    "Trauma|Moderate": [
+     0.727273,
+     0.231818,
+     0.040909
+    ],
+    "Trauma|Critical": [
+     0.307692,
+     0.403846,
+     0.288462
+    ],
+    "Minor|Low": [
+     0.95,
+     0.045,
+     0.005
+    ],
+    "Minor|Moderate": [
+     0.8,
+     0.17,
+     0.03
+    ],
+    "Minor|Critical": [
+     0.4,
+     0.35,
+     0.25
+    ]
+   }
+  },
+  "Temperature": {
+   "states": [
+    "Normal",
+    "Abnormal",
+    "Severe"
+   ],
+   "parents": [
+    "Condition",
+    "Severity"
+   ],
+   "cpt": {
+    "Cardiac|Low": [
+     0.901639,
+     0.090164,
+     0.008197
+    ],
+    "Cardiac|Moderate": [
+     0.744681,
+     0.221277,
+     0.034043
+    ],
+    "Cardiac|Critical": [
+     0.652174,
+     0.26087,
+     0.086957
+    ],
+    "Respiratory|Low": [
+     0.88,
+     0.11,
+     0.01
+    ],
+    "Respiratory|Moderate": [
+     0.7,
+     0.26,
+     0.04
+    ],
+    "Respiratory|Critical": [
+     0.6,
+     0.3,
+     0.1
+    ],
+    "Infection|Low": [
+     0.709677,
+     0.266129,
+     0.024194
+    ],
+    "Infection|Moderate": [
+     0.4375,
+     0.4875,
+     0.075
+    ],
+    "Infection|Critical": [
+     0.333333,
+     0.5,
+     0.166667
+    ],
+    "Trauma|Low": [
+     0.912863,
+     0.079876,
+     0.007261
+    ],
+    "Trauma|Moderate": [
+     0.769231,
+     0.2,
+     0.030769
+    ],
+    "Trauma|Critical": [
+     0.681818,
+     0.238636,
+     0.079545
+    ],
+    "Minor|Low": [
+     0.88,
+     0.11,
+     0.01
+    ],
+    "Minor|Moderate": [
+     0.7,
+     0.26,
+     0.04
+    ],
+    "Minor|Critical": [
+     0.6,
+     0.3,
+     0.1
+    ]
+   }
+  },
+  "ArrivalMode": {
+   "states": [
+    "WalkIn",
+    "Ambulance"
+   ],
+   "parents": [
+    "Severity"
+   ],
+   "cpt": {
+    "Low": [
+     0.95,
+     0.05
+    ],
+    "Moderate": [
+     0.75,
+     0.25
+    ],
+    "Critical": [
+     0.25,
+     0.75
+    ]
+   }
+  },
+  "ECG_Abnormal": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "cpt": {
+    "Cardiac": [
+     0.15,
+     0.85
+    ],
+    "Respiratory": [
+     0.85,
+     0.15
+    ],
+    "Infection": [
+     0.9,
+     0.1
+    ],
+    "Trauma": [
+     0.9,
+     0.1
+    ],
+    "Minor": [
+     0.95,
+     0.05
+    ]
+   },
+   "observed_by_default": false,
+   "cost": 0.5
+  },
+  "Troponin_High": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "cpt": {
+    "Cardiac": [
+     0.25,
+     0.75
+    ],
+    "Respiratory": [
+     0.92,
+     0.08
+    ],
+    "Infection": [
+     0.9,
+     0.1
+    ],
+    "Trauma": [
+     0.95,
+     0.05
+    ],
+    "Minor": [
+     0.98,
+     0.02
+    ]
+   },
+   "observed_by_default": false,
+   "cost": 1.5
+  },
+  "Lactate_High": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Severity"
+   ],
+   "cpt": {
+    "Low": [
+     0.95,
+     0.05
+    ],
+    "Moderate": [
+     0.75,
+     0.25
+    ],
+    "Critical": [
+     0.25,
+     0.75
+    ]
+   },
+   "observed_by_default": false,
+   "cost": 1.0
+  },
+  "ChestXray_Abnormal": {
+   "states": [
+    "No",
+    "Yes"
+   ],
+   "parents": [
+    "Condition"
+   ],
+   "cpt": {
+    "Cardiac": [
+     0.7,
+     0.3
+    ],
+    "Respiratory": [
+     0.15,
+     0.85
+    ],
+    "Infection": [
+     0.55,
+     0.45
+    ],
+    "Trauma": [
+     0.65,
+     0.35
+    ],
+    "Minor": [
+     0.95,
+     0.05
+    ]
+   },
+   "observed_by_default": false,
+   "cost": 2.0
+  }
+ },
+ "decision": {
+  "levels": [
+   "P1_Immediate",
+   "P2_Urgent",
+   "P3_Standard",
+   "P4_NonUrgent"
+  ],
+  "utility_matrix_rows_levels_cols_severity": [
+   [
+    -20.0,
+    -6.0,
+    0.0
+   ],
+   [
+    -8.0,
+    -2.0,
+    -25.0
+   ],
+   [
+    -2.0,
+    -15.0,
+    -80.0
+   ],
+   [
+    0.0,
+    -40.0,
+    -100.0
+   ]
+  ],
+  "severity_order": [
+   "Low",
+   "Moderate",
+   "Critical"
+  ],
+  "harm_rate_per_min_by_severity": [
+   0.01,
+   0.08,
+   0.6
+  ],
+  "service_minutes_by_condition": {
+   "Cardiac": 25,
+   "Respiratory": 20,
+   "Infection": 20,
+   "Trauma": 30,
+   "Minor": 10
+  },
+  "severity_transition_per_10min": [
+   [
+    0.97,
+    0.029,
+    0.001
+   ],
+   [
+    0.02,
+    0.93,
+    0.05
+   ],
+   [
+    0.0,
+    0.04,
+    0.96
+   ]
+  ],
+  "adverse_event_hazard_per_10min_by_severity": [
+   0.0002,
+   0.002,
+   0.03
+  ],
+  "test_cost_utility_units": {
+   "ECG_Abnormal": 0.5,
+   "Troponin_High": 1.5,
+   "Lactate_High": 1.0,
+   "ChestXray_Abnormal": 2.0
+  }
+ },
+ "vital_clinical_meaning": {
+  "HeartRate": "Normal 60-100 | Abnormal 40-59 or 101-130 | Severe <40 or >130 (adult; scale for age)",
+  "SystolicBP": "Normal 100-140 | Abnormal 90-99 or 141-180 | Severe <90 or >180",
+  "SpO2": "Normal >=95 | Abnormal 90-94 | Severe <90",
+  "RespRate": "Normal 12-20 | Abnormal 21-29 or 8-11 | Severe >=30 or <8",
+  "Consciousness": "Alert | Altered (verbal/confused) | Unresponsive (pain/unresponsive)",
+  "Temperature": "Normal 36.0-37.9C | Abnormal 38.0-39.4C or <36 | Severe >=39.5C or <35"
+ }
+}

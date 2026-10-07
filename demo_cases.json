@@ -1,0 +1,283 @@
+{
+ "A": {
+  "evidence": {
+   "Age": "Adult",
+   "History": "Cardiac",
+   "ChestPain": "Yes",
+   "Dyspnea": "Yes",
+   "VisibleInjury": "No",
+   "HeartRate": "Abnormal",
+   "SystolicBP": "Abnormal",
+   "SpO2": "Abnormal",
+   "RespRate": "Abnormal",
+   "Consciousness": "Alert",
+   "Temperature": "Normal",
+   "ArrivalMode": "Ambulance"
+  },
+  "reference_P_severity": {
+   "Low": 0.0011,
+   "Moderate": 0.7083,
+   "Critical": 0.2906
+  },
+  "reference_P_condition": {
+   "Cardiac": 0.9009,
+   "Respiratory": 0.0918,
+   "Infection": 0.0051,
+   "Trauma": 0.0021,
+   "Minor": 0.0001
+  },
+  "reference_EU_by_level": {
+   "P1_Immediate": -4.272,
+   "P2_Urgent": -8.691,
+   "P3_Standard": -33.875,
+   "P4_NonUrgent": -57.393
+  },
+  "reference_best_level": "P1_Immediate",
+  "reference_priority_index": 0.00942,
+  "reference_VOI_by_test": {
+   "ECG_Abnormal": 0.0,
+   "Troponin_High": 0.0,
+   "Lactate_High": 0.321,
+   "ChestXray_Abnormal": 0.0
+  },
+  "reference_net_VOI_by_test": {
+   "ECG_Abnormal": -0.5,
+   "Troponin_High": -1.5,
+   "Lactate_High": -0.679,
+   "ChestXray_Abnormal": -2.0
+  }
+ },
+ "B": {
+  "evidence": {
+   "Age": "Child",
+   "History": "None",
+   "ChestPain": "No",
+   "Dyspnea": "No",
+   "VisibleInjury": "No",
+   "HeartRate": "Normal",
+   "SystolicBP": "Normal",
+   "SpO2": "Normal",
+   "RespRate": "Normal",
+   "Consciousness": "Alert",
+   "Temperature": "Normal",
+   "ArrivalMode": "WalkIn"
+  },
+  "reference_P_severity": {
+   "Low": 0.9944,
+   "Moderate": 0.0056,
+   "Critical": 0.0
+  },
+  "reference_P_condition": {
+   "Cardiac": 0.0006,
+   "Respiratory": 0.0114,
+   "Infection": 0.0862,
+   "Trauma": 0.0137,
+   "Minor": 0.888
+  },
+  "reference_EU_by_level": {
+   "P1_Immediate": -19.922,
+   "P2_Urgent": -7.967,
+   "P3_Standard": -2.072,
+   "P4_NonUrgent": -0.222
+  },
+  "reference_best_level": "P4_NonUrgent",
+  "reference_priority_index": 0.00092,
+  "reference_VOI_by_test": {
+   "ECG_Abnormal": 0.0,
+   "Troponin_High": -0.0,
+   "Lactate_High": 0.0,
+   "ChestXray_Abnormal": 0.0
+  },
+  "reference_net_VOI_by_test": {
+   "ECG_Abnormal": -0.5,
+   "Troponin_High": -1.5,
+   "Lactate_High": -1.0,
+   "ChestXray_Abnormal": -2.0
+  }
+ },
+ "C": {
+  "evidence": {
+   "Age": "Elderly",
+   "History": "Respiratory",
+   "ChestPain": "No",
+   "Dyspnea": "Yes",
+   "VisibleInjury": "No",
+   "HeartRate": "Abnormal",
+   "SystolicBP": "Normal",
+   "SpO2": "Severe",
+   "RespRate": "Severe",
+   "Consciousness": "Altered",
+   "Temperature": "Abnormal",
+   "ArrivalMode": "Ambulance"
+  },
+  "reference_P_severity": {
+   "Low": 0.0,
+   "Moderate": 0.0667,
+   "Critical": 0.9333
+  },
+  "reference_P_condition": {
+   "Cardiac": 0.0215,
+   "Respiratory": 0.8531,
+   "Infection": 0.1244,
+   "Trauma": 0.0008,
+   "Minor": 0.0001
+  },
+  "reference_EU_by_level": {
+   "P1_Immediate": -0.401,
+   "P2_Urgent": -23.465,
+   "P3_Standard": -75.661,
+   "P4_NonUrgent": -95.995
+  },
+  "reference_best_level": "P1_Immediate",
+  "reference_priority_index": 0.0281,
+  "reference_VOI_by_test": {
+   "ECG_Abnormal": -0.0,
+   "Troponin_High": -0.0,
+   "Lactate_High": 0.0,
+   "ChestXray_Abnormal": 0.0
+  },
+  "reference_net_VOI_by_test": {
+   "ECG_Abnormal": -0.5,
+   "Troponin_High": -1.5,
+   "Lactate_High": -1.0,
+   "ChestXray_Abnormal": -2.0
+  }
+ },
+ "D": {
+  "evidence": {
+   "Age": "Adult",
+   "History": "Metabolic",
+   "ChestPain": "No",
+   "Dyspnea": "No",
+   "VisibleInjury": "No",
+   "HeartRate": "Abnormal",
+   "SystolicBP": "Normal",
+   "SpO2": "Normal",
+   "RespRate": "Normal",
+   "Consciousness": "Alert",
+   "Temperature": "Abnormal",
+   "ArrivalMode": "WalkIn"
+  },
+  "reference_P_severity": {
+   "Low": 0.7696,
+   "Moderate": 0.2301,
+   "Critical": 0.0003
+  },
+  "reference_P_condition": {
+   "Cardiac": 0.0141,
+   "Respiratory": 0.0107,
+   "Infection": 0.5348,
+   "Trauma": 0.0131,
+   "Minor": 0.4274
+  },
+  "reference_EU_by_level": {
+   "P1_Immediate": -16.773,
+   "P2_Urgent": -6.624,
+   "P3_Standard": -5.013,
+   "P4_NonUrgent": -9.231
+  },
+  "reference_best_level": "P3_Standard",
+  "reference_priority_index": 0.00165,
+  "reference_VOI_by_test": {
+   "ECG_Abnormal": 0.0,
+   "Troponin_High": 0.0493,
+   "Lactate_High": 0.5283,
+   "ChestXray_Abnormal": 0.1215
+  },
+  "reference_net_VOI_by_test": {
+   "ECG_Abnormal": -0.5,
+   "Troponin_High": -1.4507,
+   "Lactate_High": -0.4717,
+   "ChestXray_Abnormal": -1.8785
+  }
+ },
+ "E": {
+  "evidence": {
+   "Age": "Elderly",
+   "History": "Cardiac",
+   "ChestPain": "Yes",
+   "Dyspnea": "Yes",
+   "VisibleInjury": "No",
+   "HeartRate": "Severe",
+   "SystolicBP": "Severe",
+   "SpO2": "Severe",
+   "RespRate": "Abnormal",
+   "Consciousness": "Altered",
+   "Temperature": "Normal",
+   "ArrivalMode": "Ambulance"
+  },
+  "reference_P_severity": {
+   "Low": 0.0,
+   "Moderate": 0.0023,
+   "Critical": 0.9977
+  },
+  "reference_P_condition": {
+   "Cardiac": 0.9628,
+   "Respiratory": 0.0344,
+   "Infection": 0.0022,
+   "Trauma": 0.0006,
+   "Minor": 0.0
+  },
+  "reference_EU_by_level": {
+   "P1_Immediate": -0.014,
+   "P2_Urgent": -24.948,
+   "P3_Standard": -79.852,
+   "P4_NonUrgent": -99.864
+  },
+  "reference_best_level": "P1_Immediate",
+  "reference_priority_index": 0.02413,
+  "reference_VOI_by_test": {
+   "ECG_Abnormal": 0.0,
+   "Troponin_High": 0.0,
+   "Lactate_High": -0.0,
+   "ChestXray_Abnormal": 0.0
+  },
+  "reference_net_VOI_by_test": {
+   "ECG_Abnormal": -0.5,
+   "Troponin_High": -1.5,
+   "Lactate_High": -1.0,
+   "ChestXray_Abnormal": -2.0
+  }
+ },
+ "F_incomplete": {
+  "evidence": {
+   "Age": "Elderly",
+   "History": "Cardiac",
+   "ChestPain": "Yes",
+   "HeartRate": "Abnormal",
+   "ArrivalMode": "WalkIn"
+  },
+  "reference_P_severity": {
+   "Low": 0.15,
+   "Moderate": 0.6875,
+   "Critical": 0.1624
+  },
+  "reference_P_condition": {
+   "Cardiac": 0.9188,
+   "Respiratory": 0.0314,
+   "Infection": 0.012,
+   "Trauma": 0.033,
+   "Minor": 0.0048
+  },
+  "reference_EU_by_level": {
+   "P1_Immediate": -7.126,
+   "P2_Urgent": -6.637,
+   "P3_Standard": -23.609,
+   "P4_NonUrgent": -43.745
+  },
+  "reference_best_level": "P2_Urgent",
+  "reference_priority_index": 0.00619,
+  "reference_VOI_by_test": {
+   "ECG_Abnormal": -0.0,
+   "Troponin_High": 0.0,
+   "Lactate_High": 2.2683,
+   "ChestXray_Abnormal": 0.0
+  },
+  "reference_net_VOI_by_test": {
+   "ECG_Abnormal": -0.5,
+   "Troponin_High": -1.5,
+   "Lactate_High": 1.2683,
+   "ChestXray_Abnormal": -2.0
+  }
+ }
+}
